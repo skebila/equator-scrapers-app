@@ -1,31 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import axios from "axios";
 
-const ScraperList = () => {
+const columns = [
+  { field: "name", headerName: "Name", width: 150 },
+  { field: "githubUrl", headerName: "GitHub URL", width: 150 },
+  { field: "downloadUrl", headerName: "Download URL", width: 150 },
+];
+
+function ScraperList() {
   const [scrapers, setScrapers] = useState([]);
+  const [error, setError] = useState(null);
+
+  const getScrapers = async () => {
+    await axios.get("https://github.com/Equator-Studios/scrapers/tree/main/scrapers").then((res) => {
+      setScrapers(res.data.data);
+    })
+  }
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/Equator-Studios/scrapers/contents/scrapers')
-      .then(response => response.json())
-      .then(data => {
-        const scraperData = data.map(scraper => ({
-          name: scraper.name,
-          githubUrl: scraper.html_url,
-          downloadUrl: scraper.download_url,
-        }));
-        setScrapers(scraperData);
-      });
+    getScrapers();
   }, []);
 
+  console.log(scrapers);
+
   return (
-    <ul>
-      {scrapers.map(scraper => (
-        <li key={scraper.name}>
-          <p>Name: {scraper.name}</p>
-          <p>GitHub URL: {scraper.githubUrl}</p>
-          <p>Download URL: {scraper.downloadUrl}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      
+    </>
   );
 };
 
