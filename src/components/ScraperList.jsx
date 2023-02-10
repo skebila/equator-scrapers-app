@@ -86,22 +86,22 @@ function ScraperList() {
           
           :
         
-        <DataGrid
-          rows={scrapers}
-          columns={columns}
-          //pageSize={20}
-          rowsPerPageOptions={[ 25 ,45, 65, 85]}
-          checkboxSelection={true}
-          disableSelectionOnClick
-          sx={{
-            boxShadow: 2,
-            border: 2,
-            borderColor: 'primary.light',
-            '& .MuiDataGrid-cell:hover': {
-              color: 'primary.main',
-            },
-          }}
-        />
+          <DataGrid
+            rows={scrapers}
+            columns={columns}
+            pageSize={20}
+            rowsPerPageOptions={[ 20, 40, 60, 80]}
+            checkboxSelection={true}
+            disableSelectionOnClick
+            sx={{
+              boxShadow: 2,
+              border: 2,
+              borderColor: 'primary.light',
+              '& .MuiDataGrid-cell:hover': {
+                color: 'primary.main',
+              },
+            }}
+          />
       }
     </Box>
   );
