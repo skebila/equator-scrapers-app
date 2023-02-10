@@ -70,7 +70,7 @@ function ScraperList() {
   //console.log(scrapers);
 
   return (
-    <Box className={`h-[100vh] ${styles.paddingY}`}>
+    <Box className={`h-[100vh] mx-10 ${styles.paddingY}`}>
       {
         !scrapers 
         
