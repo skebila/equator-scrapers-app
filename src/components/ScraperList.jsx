@@ -7,7 +7,7 @@ import { link } from '../assets';
 
 const columns = [
   { field: "id", headerName: "ID" },
-  { field: "name", headerName: "Name", width: 150 },
+  { field: "name", headerName: "Name", width: 200 },
   {field: "githubUrl", headerName: "GitHub URL", width: 200,
     renderCell: ({ value }) => (
       
@@ -22,7 +22,7 @@ const columns = [
       
     )
   },
-  { field: "downloadUrl", headerName: "Download URL", width: 500,
+  { field: "downloadUrl", headerName: "Download URL", width: 200,
     renderCell: ({ value }) => (
       <a
         href={value}
