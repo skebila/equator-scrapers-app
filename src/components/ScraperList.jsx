@@ -89,8 +89,8 @@ function ScraperList() {
         <DataGrid
           rows={scrapers}
           columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[10, 20, 40, 60, 80]}
+          //pageSize={20}
+          rowsPerPageOptions={[ 25 ,45, 65, 85]}
           checkboxSelection={true}
           disableSelectionOnClick
           sx={{
